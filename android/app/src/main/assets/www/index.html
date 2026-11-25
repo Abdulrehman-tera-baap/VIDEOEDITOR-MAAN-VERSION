@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b1b"><link rel="manifest" href="manifest.webmanifest">
+<title>MAAN Video Editing App</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div id="auth" class="auth-wrap">
+  <div class="brand"><div class="brandmark">M▶</div><h1>MAAN</h1><p>VIDEO EDITING STUDIO</p></div>
+  <section class="panel auth-panel">
+    <h2 id="authTitle">Welcome back</h2><p class="muted">Sign in to your editing studio</p>
+    <label>Email<input id="email" type="email" autocomplete="email" placeholder="you@example.com"></label>
+    <label>Password<input id="password" type="password" autocomplete="current-password" placeholder="Your password"></label>
+    <button id="authAction" class="primary">Login</button>
+    <button id="switchAuth" class="linkbtn">Create a new account</button>
+    <button id="guestBtn" class="ghost">Continue as guest</button>
+    <p id="authMsg" class="msg"></p>
+    <p class="tiny">Secure account sign-in is enabled after connecting your Supabase project. Guest editing works without an account.</p>
+  </section>
+</div>
+<div id="app" class="hidden">
+<header><div class="brand-mini"><span class="brandmark small">M▶</span><b>MAAN</b></div><div class="header-actions"><span id="userLabel">Guest mode</span><button id="logout" class="ghost smallbtn">Sign out</button></div></header>
+<main>
+<section class="welcome"><div><p class="eyebrow">YOUR CREATIVE STUDIO</p><h1>Make something <span>amazing.</span></h1><p class="muted">Powerful editing tools. No premium lock. No watermark added by MAAN.</p></div><label class="primary import-btn">＋ Import video<input id="videoFile" type="file" accept="video/*" hidden></label></section>
+<div class="workspace">
+<section class="panel preview-panel">
+ <div class="section-head"><h2>Preview</h2><span id="fileName" class="muted">No video selected</span></div>
+ <div class="preview-stage" id="stage"><div class="empty-state"><div class="bigplay">▶</div><b>Your video appears here</b><p>Import a video to start editing</p></div><video id="video" playsinline controls class="hidden"></video></div>
+ <div class="transport"><button id="playBtn" class="primary" disabled>▶ Play</button><span id="timeLabel">00:00 / 00:00</span><button id="resetBtn" class="ghost" disabled>Reset</button></div>
+</section>
+<aside class="panel tools-panel">
+ <h2>Quick tools</h2>
+ <div class="tool-grid">
+  <button class="tool active" data-tool="trim"><b>✂</b><span>Trim</span></button>
+  <button class="tool" data-tool="filters"><b>◐</b><span>Filters</span></button>
+  <button class="tool" data-tool="speed"><b>◷</b><span>Speed</span></button>
+  <button class="tool" data-tool="rotate"><b>⟳</b><span>Rotate</span></button>
+  <button class="tool" data-tool="crop"><b>▣</b><span>Fit / Fill</span></button>
+  <button class="tool" data-tool="export"><b>⇩</b><span>Export</span></button>
+ </div>
+ <div id="toolContent" class="tool-content">
+  <h3>Trim video</h3><label>Start time <input id="trimStart" type="number" min="0" step=".1" value="0"></label>
+  <label>End time <input id="trimEnd" type="number" min="0" step=".1" value="0"></label>
+  <p class="hint">Set the section you want to keep, then export.</p>
+ </div>
+</aside>
+</div>
+<section class="panel export-panel">
+ <div><h2>Export your video</h2><p class="muted">Save your edited clip to your device. Export duration is based on your trim points.</p></div>
+ <div class="export-controls"><label>Quality<select id="quality"><option value="720">HD 720p</option><option value="1080" selected>Full HD 1080p</option><option value="480">SD 480p</option></select></label><button id="exportBtn" class="primary" disabled>Export video</button></div>
+ <p id="exportMsg" class="msg"></p>
+</section>
+<section class="panel about"><h2>About MAAN</h2><p>Created and owned by <b>Abdul Rehman</b> · <a href="tel:+923160444503">+92 316 0444503</a></p><p class="tiny">MAAN is an independent editor. Available tools depend on browser/device support. No paid features are locked in this starter build.</p></section>
+</main><footer>MAAN VIDEO EDITING APP <span>EDIT · CREATE · INSPIRE</span></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "name": "MAAN Video Editing App",
+  "short_name": "MAAN Editor",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#070b1b",
+  "theme_color": "#070b1b",
+  "icons": []
+}
